@@ -7,7 +7,11 @@ const http = axios.create({
 
 http.interceptors.request.use(config => {
   const token = localStorage.getItem('cd_token')
-  if (token) config.headers.Authorization = `Bearer ${token}`
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+
   return config
 })
 
@@ -19,9 +23,9 @@ http.interceptors.response.use(
       localStorage.removeItem('cd_user')
       window.location.href = '/login'
     }
+
     return Promise.reject(err)
   }
 )
 
 export default http
-
