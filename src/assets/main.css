@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --cd-font-body: 'Plus Jakarta Sans', sans-serif;
+  --cd-font-mono: 'JetBrains Mono', monospace;
+
+  /* Paleta clara */
+  --cd-bg:          #ffffff;
+  --cd-surface:     #F3F4F6;
+  --cd-surface-2:   #84bbdd;
+  --cd-border:      #ffffff;
+  --cd-text:        #292929;
+  --cd-text-muted:  #292929;
+  --cd-accent:      #6096b8;
+  --cd-accent-soft: rgba(88, 188, 212, 0.08);
+  --cd-success:     #73cc6b;
+  --cd-warning:     #d97706;
+  --cd-danger:      #dc2626;
+
+  /* Status */
+  --cd-status-open:       #507545;
+  --cd-status-inprogress: #bb7d20;
+  --cd-status-closed:     #9c3131;
+
+  /* Urgencia */
+  --cd-urgency-low:    #16a34a;
+  --cd-urgency-medium: #d97706;
+  --cd-urgency-high:   #dc2626;
+
+  /* Forma */
+  --cd-radius:    10px;
+  --cd-radius-sm: 6px;
+  --cd-radius-lg: 16px;
+
+  /* Sombras */
+  --cd-shadow:    0 4px 24px rgba(0, 0, 0, 0.07);
+  --cd-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--cd-font-body);
+  background: var(--cd-bg);
+  color: var(--cd-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--cd-surface-2); }
+::-webkit-scrollbar-thumb { background: var(--cd-border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cd-text-muted); }
+
+/* Utilidades */
+.mono { font-family: var(--cd-font-mono); }
+.text-muted { color: var(--cd-text-muted); }
+
+/* PrimeVue overrides */
+.p-card {
+  background: var(--cd-surface) !important;
+  border: 3px solid var(--cd-border) !important;
+  border-radius: var(--cd-radius-lg) !important;
+  box-shadow: var(--cd-shadow) !important;
+}
+
+.p-inputtext, .p-password input, .p-select, .p-textarea {
+  background: var(--cd-surface) !important;
+  border-color: var(--cd-border) !important;
+  color: var(--cd-text) !important;
+  border-radius: var(--cd-radius-sm) !important;
+  font-family: var(--cd-font-body) !important;
+}
+
+.p-inputtext:focus, .p-password input:focus {
+  border-color: var(--cd-accent) !important;
+  box-shadow: 0 0 0 3px var(--cd-accent-soft) !important;
+}
+
+.p-button-primary {
+  background: var(--cd-accent) !important;
+  border-color: var(--cd-accent) !important;
+  font-family: var(--cd-font-body) !important;
+  font-weight: 600 !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: var(--cd-surface-2) !important;
+  border-color: var(--cd-border) !important;
+  color: var(--cd-text-muted) !important;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: var(--cd-font-body) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  background: var(--cd-surface) !important;
+  border-color: var(--cd-border) !important;
+  color: var(--cd-text) !important;
+  transition: background 0.15s;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background: var(--cd-surface-2) !important;
+}
+
+.p-tag {
+  border-radius: 99px !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  font-family: var(--cd-font-body) !important;
+}
+
+.p-dialog {
+  border-radius: var(--cd-radius-lg) !important;
+  box-shadow: var(--cd-shadow) !important;
+}
+
+.p-dialog .p-dialog-header {
+  border-bottom: 1px solid var(--cd-border) !important;
+  font-weight: 700 !important;
+  font-family: var(--cd-font-body) !important;
+}
+
+.p-button {
+  background: #84bbdd !important;
+  border-color: #6096b8 !important;
+}
+
+.p-button:hover {
+  background: #59a6d6 !important;
+  border-color: #ffffff !important;
+}
+
+.p-button-text {
+  color: var(--cd-text-muted) !important;
+}
+
+.p-button-text:hover {
+  background: var(--cd-surface-2) !important;
+  color: var(--cd-text) !important;
+}
